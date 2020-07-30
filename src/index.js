@@ -2,6 +2,7 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
+const { callbackify } = require('util');
 
 const app = express();
 const server = http.createServer(app);
@@ -20,6 +21,7 @@ io.on('connection', (socket) => {
 
   socket.on('sendMessage', (message) => {
     io.emit('message', message);
+    callback('Delivered');
   });
 
   socket.on('sendLocation', (coords) => {
