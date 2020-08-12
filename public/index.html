@@ -22,14 +22,30 @@
     Chat App
 
     <script id="message-template" type="text/html">
-      <div>
-        <p>{{createdAt}} - {{message}}</p>
+      <div class="message">
+          <p>
+            <span class="message__name">
+              Some user name
+            </span>
+            <span class="message__meta">
+              {{createdAt}}
+            </span>
+        </p>
+        <p>{{message}}</p>
       </div>
     </script>
 
     <script id="location-message-template" type="text/html">
       <div>
-        <p>{{createdAt}} - <a href="{{url}}" target="_blank">My current location</a></p>
+        <p>
+          <span class="message__name">
+            Some user name
+          </span>
+          <span class="message__meta">
+            {{createdAt}}
+          </span>
+          <p><a href="{{url}}" target="_blank">My current location</a></p>
+        </p>
       </div>
     </script>
 
