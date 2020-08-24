@@ -31,12 +31,31 @@ const removeUser = (id) => {
   }
 };
 
+const getUser = (id) => {
+  return users.find((user) => user.id === id);
+};
+
 addUser({
   id: 22,
   username: 'Piotr',
   room: 'Ilawa',
 });
 
+addUser({
+  id: 23,
+  username: 'PiotrPiotr',
+  room: 'Ilawa',
+});
+
+addUser({
+  id: 24,
+  username: 'PiotrPiotrPiotr',
+  room: 'Ilawa',
+});
+
+const user = getUser(24);
+
 const removedUser = removeUser(22);
 console.log(removedUser);
 console.log(users);
+console.log(user);
