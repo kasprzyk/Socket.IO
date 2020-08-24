@@ -35,6 +35,10 @@ const getUser = (id) => {
   return users.find((user) => user.id === id);
 };
 
+const getUsersInRoom = (room) => {
+  return users.filter((user) => user.room === room);
+};
+
 addUser({
   id: 22,
   username: 'Piotr',
@@ -54,7 +58,8 @@ addUser({
 });
 
 const user = getUser(24);
-
+const userList = getUsersInRoom(Ilawa);
+console.log(userList);
 const removedUser = removeUser(22);
 console.log(removedUser);
 console.log(users);
